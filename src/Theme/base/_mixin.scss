@@ -1,0 +1,104 @@
+/**
+| media qurey.
+| $mediaType: 
+| 1 = "max-widht"
+| 2 = "min-width"
+*/
+@mixin MQ($size, $mediaType: 1) {
+  $mediaType: if($mediaType==1, "max-width", "min-width");
+
+  // for iphone 5, 5s, samsung galaxy s5 and more.
+  @if $size==xs {
+    @media only screen and ($mediaType: 375px) {
+      @content;
+    }
+  }
+
+  // normal mobile screen
+  @if $size==sm {
+    @media only screen and ($mediaType: 767px) {
+      @content;
+    }
+  }
+
+  // tabs
+  @else if $size==md {
+    @media only screen and ($mediaType: 992px) {
+      @content;
+    }
+  }
+
+  // desktop.
+  @else if $size==lg {
+    @media only screen and ($mediaType: 1024px) {
+      @content;
+    }
+  }
+
+  // custom.
+  @else {
+    @media only screen and ($mediaType: $size) {
+      @content;
+    }
+  }
+}
+
+/*
+| Media Query for between.
+| @parmas
+| min = sm,md,lg, custom value.
+| max = custom value - optional only if min in not custom value.
+*/
+@mixin MQ-between($min, $max: null) {
+  @if $min==sm {
+    @media (min-width: 376px) and (max-width: 767px) {
+      @content;
+    }
+  } @else if $min==md {
+    @media (min-width: 768px) and (max-width: 992px) {
+      @content;
+    }
+  } @else if $min==lg {
+    @media (min-width: 993px) and (max-width: 1024px) {
+      @content;
+    }
+  } @else if($min !=null and $max !=null) {
+    @media (min-width: $min) and (max-width: $max) {
+      @content;
+    }
+  }
+}
+
+$themes: (
+  default: (
+    color: $font-color-light,
+    bg: $background-light,
+  ),
+  dark: (
+    color: $font-color-dark,
+    bg: $background-dark,
+  ),
+);
+
+@mixin themed() {
+  @each $theme, $map in $themes {
+    .theme--#{$theme} & {
+      $theme-map: () !global;
+      @each $key, $submap in $map {
+        $value: map-get(map-get($themes, $theme), "#{$key}");
+        $theme-map: map-merge(
+          $theme-map,
+          (
+            $key: $value,
+          )
+        ) !global;
+      }
+      @content;
+      $theme-map: null !global;
+    }
+  }
+}
+
+@function t($key) {
+  @return map-get($theme-map, $key);
+}

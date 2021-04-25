@@ -1,25 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  BrowserRouter,
+} from "react-router-dom";
 
-function App() {
+import "./app.scss";
+import { LIGHT, DARK } from "./Helper/constant";
+import Navbar from "./Header/nav";
+import HomePage from "./Page/page";
+
+const HomeClass = (props) => {
+  console.log(props);
+  return <div>Home Page Loaded</div>;
+};
+const App = () => {
+  const [theme, setTheme] = useState(LIGHT);
+
+  const themeSelect = (theme) => {
+    theme !== LIGHT ? setTheme(LIGHT) : setTheme(DARK);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <React.Fragment>
+      <div className={theme === LIGHT ? "theme--default" : "theme--dark"}>
+        <BrowserRouter>
+          <Navbar></Navbar>
+          <Switch>
+            <Route path="/home" component={HomeClass}></Route>
+          </Switch>
+          <HomePage theme={theme} themeSelect={themeSelect}></HomePage>
+        </BrowserRouter>
+      </div>
+    </React.Fragment>
   );
-}
+};
 
 export default App;

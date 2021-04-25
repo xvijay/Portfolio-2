@@ -1,0 +1,117 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;700;900&display=swap");
+@import "../base/variable";
+@import "../base/mixin";
+.nv {
+  font-family: $font-family !important;
+  backdrop-filter: blur(10px);
+  // color: $font-color-dark !important;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: auto;
+  z-index: 100;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e2e2e2;
+  background-color: hsla(0, 0%, 100%, 0.6);
+
+  & .navbar {
+    padding: 0 1rem;
+    line-height: $line-height;
+    letter-spacing: -0.2px;
+    font-weight: 600;
+  }
+
+  & .navbar-brand {
+    // color: $font-color-dark !important;
+    font-size: $font-size-18;
+    @include themed() {
+      color: t("color");
+      background: t("bg");
+    }
+  }
+
+  & .navbar-nav {
+    margin: auto;
+  }
+
+  & .navbar-nav {
+    // color: $font-color-dark;
+    font-size: $font-size-14;
+    // display: inline-block;
+    transform-style: preserve-3d;
+
+    font-weight: $font-weight-normal;
+    text-decoration: none;
+
+    & a {
+      color: $font-color-dark;
+      padding: 10px 20px;
+      min-width: 89px;
+      letter-spacing: -0.2px;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+
+    & a {
+      position: relative;
+      display: inline-block;
+      text-decoration: none;
+      text-align: center;
+      cursor: pointer;
+      user-select: none;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        border-radius: 10px;
+        transition: box-shadow 0.5s ease, transform 0.2s ease;
+        will-change: transform;
+        transform: translateY(var(--ty, 0)) rotateX(var(--rx, 0))
+          rotateY(var(--ry, 0)) translateZ(var(--tz, -12px));
+      }
+
+      &:hover::before {
+        background: #f7f7f7;
+        box-shadow: inset 1px 1px 1px -0.5px #ffffffb3,
+          2px 3px 7px -2px #0000001a;
+        border: 1px solid #0000000f;
+        border-radius: 10px;
+        transition: box-shado 0.1s ease;
+      }
+
+      &::after {
+        position: relative;
+        display: inline-block;
+        content: attr(data-title);
+        transition: transform 0.1s ease-in-out;
+        will-change: transform;
+        transform: translateY(var(--ty, 0)) rotateX(var(--rx, 0))
+          rotateY(var(--ry, 0));
+      }
+    }
+    @include themed() {
+      color: t("color");
+      background: t("bg");
+    }
+  }
+
+  & .navbar-light .navbar-nav .nav-link {
+    // color: $font-color-dark;
+    @include themed() {
+      color: t("color");
+      background: t("bg");
+    }
+  }
+
+  @include themed() {
+    color: t("color");
+    background: t("bg");
+  }
+}

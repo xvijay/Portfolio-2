@@ -1,0 +1,60 @@
+.banner {
+  height: 100vh;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  position: relative;
+  font-family: $font-family !important;
+
+  & h1 {
+    font-size: 5rem;
+    font-weight: bold;
+    line-height: $line-height;
+    // text-transform: capitalize;
+
+    @include MQ(sm) {
+      font-size: 3.5rem;
+      font-weight: 600;
+    }
+  }
+
+  & h3 {
+    font-size: 1.8rem;
+    color: #a5a5a5;
+    text-transform: uppercase;
+    letter-spacing: 0.5rem;
+    position: relative;
+    padding-left: 80px;
+    margin-left: -30px;
+    // margin-bottom: 0.6rem;
+    font-family: $font-family !important;
+
+    &::before {
+      display: block;
+      content: "";
+      width: 60px;
+      height: 2px;
+      background-color: #a5a5a5;
+      margin-top: -1.5px;
+      position: absolute;
+      left: 0;
+      top: 50%;
+
+      @include MQ(sm) {
+        margin-top: 0;
+        width: 40px;
+      }
+    }
+
+    @include MQ(sm) {
+      padding-left: 55px;
+      font-size: 1rem;
+      margin-left: 0px;
+    }
+  }
+
+  @include themed() {
+    color: t("color");
+    background: t("bg");
+  }
+}
