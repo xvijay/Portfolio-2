@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Container } from "react-bootstrap";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -7,7 +7,6 @@ import { faLightbulb } from "@fortawesome/free-solid-svg-icons";
 import { DARK, LIGHT } from "../Helper/constant";
 
 const HomePage = ({ themeSelect, theme }) => {
-  const [selectedTheme, setSelectedTheme] = useState(theme);
   return (
     <React.Fragment>
       <div className="banner">
