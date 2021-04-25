@@ -50,55 +50,60 @@
       padding: 10px 20px;
       min-width: 89px;
       letter-spacing: -0.2px;
+      text-align: center;
+
       &:hover {
         text-decoration: none;
       }
-    }
-
-    & a {
-      position: relative;
-      display: inline-block;
-      text-decoration: none;
-      text-align: center;
-      cursor: pointer;
-      user-select: none;
-
-      &::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        right: 0;
-        border-radius: 10px;
-        transition: box-shadow 0.5s ease, transform 0.2s ease;
-        will-change: transform;
-        transform: translateY(var(--ty, 0)) rotateX(var(--rx, 0))
-          rotateY(var(--ry, 0)) translateZ(var(--tz, -12px));
-      }
-
-      &:hover::before {
-        background: #f7f7f7;
-        box-shadow: inset 1px 1px 1px -0.5px #ffffffb3,
-          2px 3px 7px -2px #0000001a;
-        border: 1px solid #0000000f;
-        border-radius: 10px;
-        transition: box-shado 0.1s ease;
-      }
-
       &::after {
         position: relative;
         display: inline-block;
         content: attr(data-title);
-        transition: transform 0.1s ease-in-out;
-        will-change: transform;
-        transform: translateY(var(--ty, 0)) rotateX(var(--rx, 0))
-          rotateY(var(--ry, 0));
       }
     }
-    @include themed() {
-      color: t("color");
-      background: t("bg");
+
+    @include MQ(lg, 0) {
+      & a {
+        position: relative;
+        display: inline-block;
+        text-decoration: none;
+
+        cursor: pointer;
+        user-select: none;
+
+        &::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          bottom: 0;
+          right: 0;
+          border-radius: 10px;
+          transition: box-shadow 0.5s ease, transform 0.2s ease;
+          will-change: transform;
+          transform: translateY(var(--ty, 0)) rotateX(var(--rx, 0))
+            rotateY(var(--ry, 0)) translateZ(var(--tz, -12px));
+        }
+
+        &:hover::before {
+          background: #f7f7f7;
+          box-shadow: inset 1px 1px 1px -0.5px #ffffffb3,
+            2px 3px 7px -2px #0000001a;
+          border: 1px solid #0000000f;
+          border-radius: 10px;
+          transition: box-shadow 0.1s ease;
+          @include themed() {
+            background: t("bg-hover");
+          }
+        }
+
+        &::after {
+          transition: transform 0.1s ease-in-out;
+          will-change: transform;
+          transform: translateY(var(--ty, 0)) rotateX(var(--rx, 0))
+            rotateY(var(--ry, 0));
+        }
+      }
     }
   }
 
@@ -106,7 +111,6 @@
     // color: $font-color-dark;
     @include themed() {
       color: t("color");
-      background: t("bg");
     }
   }
 

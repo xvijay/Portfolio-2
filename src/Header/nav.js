@@ -6,6 +6,7 @@ import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 
 const NavBar = () => {
   const animation = (id) => {
+    console.log("here");
     const docStyle = document.querySelector(`#${id}`).style;
     const aElem = document.querySelector(`#${id}`);
     const boundingClientRect = aElem.getBoundingClientRect();
@@ -76,11 +77,11 @@ const NavBar = () => {
                 ></Nav.Link>
                 <Nav.Link
                   href="#home"
-                  className="nv__link resume d-block d-md-none"
+                  className="nv__link resume-mobile d-block d-md-none"
                   onMouseEnter={() => {
-                    animation("resume");
+                    animation("resume-mobile");
                   }}
-                  id="resume"
+                  id="resume-mobile"
                   data-title={``}
                   style={{
                     color: "#1984ea",

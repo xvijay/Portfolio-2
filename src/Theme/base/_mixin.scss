@@ -73,10 +73,12 @@ $themes: (
   default: (
     color: $font-color-light,
     bg: $background-light,
+    bg-hover: $background-light-hover,
   ),
   dark: (
     color: $font-color-dark,
     bg: $background-dark,
+    bg-hover: $background-dark-hover,
   ),
 );
 
