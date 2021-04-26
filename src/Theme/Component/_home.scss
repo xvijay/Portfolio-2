@@ -126,3 +126,27 @@
     background: t("bg-about");
   }
 }
+
+.works {
+  height: auto;
+
+  & h3 {
+    font-size: 1.8rem;
+    color: #a5a5a5;
+    text-transform: uppercase;
+    letter-spacing: 0.5rem;
+    position: relative;
+    font-family: $font-family !important;
+  }
+
+  & h2 {
+    font-size: 3rem;
+    letter-spacing: 0.5rem;
+    position: relative;
+    line-height: $line-height;
+    @include themed() {
+      color: t("color");
+      // background: t("bg-about");
+    }
+  }
+}

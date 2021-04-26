@@ -67,7 +67,10 @@ const HomePage = ({ themeSelect, theme }) => {
           </div>
         </Container>
       </div>
-      <section className="aboutMe pt-5">
+      <section
+        className="aboutMe pt-5"
+        style={{ borderBottom: "1px solid #ebebeb" }}
+      >
         <div className="title text-center pt-5">
           <h3>About</h3>
           <h2>Personal Info</h2>
@@ -100,6 +103,25 @@ const HomePage = ({ themeSelect, theme }) => {
                 <div className="skill">PHP</div>
               </div>
             </div>
+          </div>
+        </Container>
+      </section>
+      <section className="works pt-5" style={{ background: "#ebebeb" }}>
+        <Container className="text-center pt-5">
+          <h3>Work</h3>
+          <h2>Latest Projects</h2>
+          <h4>
+            Here you can find some of the projects that I created recently
+          </h4>
+          <div
+            className="d-flex"
+            style={{
+              height: "100vh ",
+              background: `linear-gradient( 90deg,rgba(28,29,37,.15) 0,rgba(28,29,37,.15) 1px,transparent 1px,transparent calc(50% - 1px),rgba(28,29,37,.15) calc(50% - 1px),rgba(28,29,37,.15) 50%,transparent 50%,transparent calc(100% - 1px),rgba(28,29,37,.15) calc(100% - 1px),rgba(28,29,37,.15) 100%)`,
+            }}
+          >
+            <div className="w-100"></div>
+            <div className="w-100"></div>
           </div>
         </Container>
       </section>

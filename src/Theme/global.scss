@@ -17,6 +17,7 @@
   /* margin-top: 1px; */
   transform: rotate(180deg);
   font-size: 2rem;
+  background: transparent;
 
   &::before {
     display: block;
@@ -34,6 +35,6 @@
   }
   @include themed() {
     color: t("color");
-    background: t("bg");
+    // background: t("bg");
   }
 }
