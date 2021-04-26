@@ -49,7 +49,7 @@ const HomePage = ({ themeSelect, theme }) => {
         <Container className="position-relative">
           <h3>Hello There</h3>
           <h1>
-            I am Vijay Tripathi<br></br>I am a Web Developer
+            I am Vijay Tripathi<br></br>I am a Full Stack Developer
           </h1>
           <div>
             <button
