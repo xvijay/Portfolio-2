@@ -26,9 +26,9 @@
   & .navbar-brand {
     // color: $font-color-dark !important;
     font-size: $font-size-18;
+    background: transparent;
     @include themed() {
       color: t("color");
-      background: t("bg");
     }
   }
 

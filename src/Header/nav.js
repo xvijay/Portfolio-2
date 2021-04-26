@@ -4,41 +4,9 @@ import { Container, Nav, Navbar } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 
+import { Animaton } from "../Helper/helper";
+
 const NavBar = () => {
-  const animation = (id) => {
-    console.log("here");
-    const docStyle = document.querySelector(`#${id}`).style;
-    const aElem = document.querySelector(`#${id}`);
-    const boundingClientRect = aElem.getBoundingClientRect();
-
-    aElem.onmousemove = function (e) {
-      const x = e.clientX - boundingClientRect.left;
-      const y = e.clientY - boundingClientRect.top;
-
-      const xc = boundingClientRect.width / 2;
-      const yc = boundingClientRect.height / 2;
-
-      const dx = x - xc;
-      const dy = y - yc;
-
-      docStyle.setProperty("--rx", `${dy / -1}deg`);
-      docStyle.setProperty("--ry", `${dx / 3}deg`);
-    };
-
-    aElem.onmouseleave = function (e) {
-      docStyle.setProperty("--ty", "0");
-      docStyle.setProperty("--rx", "0");
-      docStyle.setProperty("--ry", "0");
-    };
-
-    aElem.onmousedown = function (e) {
-      docStyle.setProperty("--tz", "-25px");
-    };
-
-    document.body.onmouseup = function (e) {
-      docStyle.setProperty("--tz", "-12px");
-    };
-  };
   return (
     <React.Fragment>
       <div className="nv">
@@ -52,7 +20,7 @@ const NavBar = () => {
                   href="#home"
                   className="nv__link about"
                   onMouseEnter={() => {
-                    animation("about");
+                    Animaton("about");
                   }}
                   id="about"
                   data-title="About"
@@ -61,7 +29,7 @@ const NavBar = () => {
                   href="#home"
                   className="nv__link work"
                   onMouseEnter={() => {
-                    animation("work");
+                    Animaton("work");
                   }}
                   id="work"
                   data-title="Projects"
@@ -70,7 +38,7 @@ const NavBar = () => {
                   href="#home"
                   className="nv__link contact"
                   onMouseEnter={() => {
-                    animation("contact");
+                    Animaton("contact");
                   }}
                   id="contact"
                   data-title="Contact Me"
@@ -79,7 +47,7 @@ const NavBar = () => {
                   href="#home"
                   className="nv__link resume-mobile d-block d-md-none"
                   onMouseEnter={() => {
-                    animation("resume-mobile");
+                    Animaton("resume-mobile");
                   }}
                   id="resume-mobile"
                   data-title={``}
@@ -100,7 +68,7 @@ const NavBar = () => {
                 href="#home"
                 className="nv__link resume"
                 onMouseEnter={() => {
-                  animation("resume");
+                  Animaton("resume");
                 }}
                 id="resume"
                 data-title={``}

@@ -74,11 +74,15 @@ $themes: (
     color: $font-color-light,
     bg: $background-light,
     bg-hover: $background-light-hover,
+    bg-banner: $background-light-banner,
+    bg-about: $background-light-about,
   ),
   dark: (
     color: $font-color-dark,
     bg: $background-dark,
     bg-hover: $background-dark-hover,
+    bg-banner: $background-dark-banner,
+    bg-about: $background-dark-about,
   ),
 );
 
