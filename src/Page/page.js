@@ -49,7 +49,7 @@ const HomePage = ({ themeSelect, theme }) => {
         <Container className="position-relative">
           <h3>Hello There</h3>
           <h1>
-            I am Vijay Tripathi<br></br>I am a Full Stack Developer
+            I am Vijay Tripathi<br></br>I am a Full Stack2 Developer
           </h1>
           <div>
             <button
@@ -106,25 +106,37 @@ const HomePage = ({ themeSelect, theme }) => {
           </div>
         </Container>
       </section>
-      <section className="works pt-5" style={{ background: "#ebebeb" }}>
-        <Container className="text-center pt-5">
-          <h3>Work</h3>
-          <h2>Latest Projects</h2>
-          <h4>
-            Here you can find some of the projects that I created recently
-          </h4>
-          <div
-            className="d-flex"
-            style={{
-              height: "100vh ",
-              background: `linear-gradient( 90deg,rgba(28,29,37,.15) 0,rgba(28,29,37,.15) 1px,transparent 1px,transparent calc(50% - 1px),rgba(28,29,37,.15) calc(50% - 1px),rgba(28,29,37,.15) 50%,transparent 50%,transparent calc(100% - 1px),rgba(28,29,37,.15) calc(100% - 1px),rgba(28,29,37,.15) 100%)`,
-            }}
-          >
-            <div className="w-100"></div>
-            <div className="w-100"></div>
+      <section className="works position-relative">
+        <div className="works__box py-5">
+          <div className="title text-center pt-5">
+            <h3>Works</h3>
+            <h2>Latest Projects</h2>
+            <h4>
+              Here you can find some of the projects that I created recently
+            </h4>
           </div>
-        </Container>
+          <div className="works__box">
+            <div className="position-relative">
+              <div className="works__cards left">
+                <div className="works__cards__content">
+                  <div className="works__cards__content__title">
+                    Video Calling
+                  </div>
+                  <div className="works__cards__content__des">
+                    All for video calling
+                  </div>
+                  <button>Click Me</button>
+                </div>
+                <div className="overlay"></div>
+              </div>
+            </div>
+            <div className="works__cards right">
+              <div className="overlay"></div>
+            </div>
+          </div>
+        </div>
       </section>
+
       <div
         className="themeSelector"
         onClick={() => themeSelect(theme === LIGHT ? LIGHT : DARK)}

@@ -76,6 +76,7 @@ $themes: (
     bg-hover: $background-light-hover,
     bg-banner: $background-light-banner,
     bg-about: $background-light-about,
+    line-light: $light-bg-color,
   ),
   dark: (
     color: $font-color-dark,
@@ -83,6 +84,7 @@ $themes: (
     bg-hover: $background-dark-hover,
     bg-banner: $background-dark-banner,
     bg-about: $background-dark-about,
+    line-light: $dark-bg-color,
   ),
 );
 

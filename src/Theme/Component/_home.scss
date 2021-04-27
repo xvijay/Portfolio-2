@@ -70,8 +70,6 @@
     color: t("color");
     background: t("bg-banner");
   }
-
-  // background-image: url(/Assets/Images/pexels-sheena-wood-574116.jpg);
 }
 
 .aboutMe {
@@ -127,8 +125,12 @@
   }
 }
 
+// $line-color-light: rgba(28, 29, 37, 1);
+
 .works {
   height: auto;
+  font-family: $font-family !important;
+  font-weight: 500;
 
   & h3 {
     font-size: 1.8rem;
@@ -148,5 +150,107 @@
       color: t("color");
       // background: t("bg-about");
     }
+  }
+
+  &__box {
+    height: 100%;
+    width: 80%;
+    // max-width: 950px;
+    position: relative;
+    margin: auto;
+  }
+
+  &__cards {
+    display: block;
+    opacity: 1;
+    height: 480px;
+    background-color: #1c1d25;
+    position: relative;
+    box-shadow: 0 20px 80px 0 #00000073;
+    margin-left: auto;
+    margin-right: auto;
+    background-position: 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: all 0.35s ease-in-out;
+    margin: auto;
+    margin-top: 6rem;
+
+    &:before {
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      display: block;
+      content: " ";
+      background: #1c1d25;
+      opacity: 0.6;
+      transition: opacity 0.3s ease;
+      z-index: 2;
+    }
+
+    &:hover {
+      box-shadow: 0 20px 80px 0 rgb(0 0 0 / 65%);
+
+      & .overlay {
+        width: 100%;
+        z-index: 2;
+      }
+
+      & .works__cards__content {
+        transform: scale(1.1);
+      }
+    }
+
+    &.left {
+      margin-left: 1.5rem;
+      margin-right: -1.5rem;
+    }
+    &.right {
+      margin-left: -1.5rem;
+      margin-right: 1.5rem;
+    }
+
+    & .overlay {
+      background: #263653;
+      width: 0;
+      position: absolute;
+      top: 0;
+      height: 100%;
+      transition: width 0.35s ease-in-out;
+    }
+
+    &__content {
+      position: absolute;
+      color: white;
+      width: 60%;
+      height: auto;
+      top: 50%;
+      text-align: left;
+      left: 10%;
+      z-index: 3;
+      transition: all 0.35s ease-in-out;
+
+      &__title {
+        font-size: 3rem;
+        letter-spacing: 0.5rem;
+        position: relative;
+        line-height: 1.2;
+        font-weight: 500;
+      }
+
+      &__des {
+        margin-bottom: 0.5rem;
+        font-weight: 500;
+        line-height: 1.2;
+        font-size: 1.5rem;
+      }
+    }
+  }
+
+  @include themed() {
+    color: t("color");
+    background: t("bg-banner");
   }
 }
