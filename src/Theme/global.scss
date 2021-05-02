@@ -7,14 +7,14 @@
 
 @import "./Component/home";
 
+@import "./Component/about";
+
 .themeSelector {
   position: fixed;
   top: 106px;
   right: 50px;
-  /* padding-right: 10px; */
   cursor: pointer;
   display: flex;
-  /* margin-top: 1px; */
   transform: rotate(180deg);
   font-size: 2rem;
   background: transparent;
@@ -25,7 +25,6 @@
     width: 4px;
     height: 50px;
     background-color: #a5a5a5;
-    /* margin-top: -1.5px; */
     position: absolute;
     left: 9px;
     top: 31px;
@@ -35,6 +34,27 @@
   }
   @include themed() {
     color: t("color");
-    // background: t("bg");
+  }
+}
+.socialIcons {
+  position: absolute;
+  bottom: 10px;
+  left: 20px;
+  font-size: 1.5rem;
+  display: flex;
+  grid-gap: 20px;
+  cursor: pointer;
+  // &::before {
+  //   display: block;
+  //   content: "";
+  //   width: 4px;
+  //   height: 51px;
+  //   background-color: #a5a5a5;
+  //   position: absolute;
+  //   left: 8px;
+  //   bottom: -49px;
+  // }
+  @include themed() {
+    color: t("color");
   }
 }

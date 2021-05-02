@@ -54,74 +54,11 @@
   }
 
   & button {
-    padding: 10px 20px;
-    background: transparent;
-    border: 1px solid;
-    margin-top: 1.5rem;
-    color: #1984ea;
-    &:hover {
-      background: #1984ea;
-      color: white;
-      transition: all 0.3s ease;
-    }
   }
 
   @include themed() {
     color: t("color");
     background: t("bg-banner");
-  }
-}
-
-.aboutMe {
-  height: 100vh;
-
-  & h3 {
-    font-size: 1.8rem;
-    color: #a5a5a5;
-    text-transform: uppercase;
-    letter-spacing: 0.5rem;
-    position: relative;
-    font-family: $font-family !important;
-  }
-
-  & h2 {
-    font-size: 3rem;
-    letter-spacing: 0.5rem;
-    position: relative;
-    line-height: $line-height;
-    @include themed() {
-      color: t("color");
-      background: t("bg-about");
-    }
-  }
-
-  & .skill {
-    padding: 10px 20px;
-    border: 1px solid;
-    margin: 20px 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    line-height: $line-height;
-    letter-spacing: 0rem;
-    border-radius: 10px;
-    box-shadow: -1px -3px 5px white, 1px 3px 5px $background-light-banner;
-    transition: all 0.5s ease-in-out;
-    cursor: default;
-    font-weight: 600;
-    &:hover {
-      // margin-top: -10px;
-      transform: translateY(-10px);
-    }
-    @include themed() {
-      color: t("color");
-      background: t("bg-banner");
-      border-color: t("bg-banner");
-    }
-  }
-  @include themed() {
-    color: t("color");
-    background: t("bg-about");
   }
 }
 
@@ -158,6 +95,11 @@
     // max-width: 950px;
     position: relative;
     margin: auto;
+
+    @include MQ(md) {
+      width: 100%;
+      padding: 0 1rem;
+    }
   }
 
   &__cards {
@@ -206,10 +148,20 @@
     &.left {
       margin-left: 1.5rem;
       margin-right: -1.5rem;
+
+      @include MQ(md) {
+        margin-left: 0rem;
+        margin-right: 0rem;
+      }
     }
     &.right {
       margin-left: -1.5rem;
       margin-right: 1.5rem;
+
+      @include MQ(md) {
+        margin-left: 0rem;
+        margin-right: 0rem;
+      }
     }
 
     & .overlay {
@@ -253,4 +205,56 @@
     color: t("color");
     background: t("bg-banner");
   }
+}
+
+.movingCircle {
+  animation-name: spin;
+  animation-duration: 7000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.buttonAnimation {
+  padding: 10px 20px;
+  // background: transparent;
+  border: 1px solid;
+  margin-top: 1.5rem;
+  color: white;
+  position: relative;
+  z-index: 1;
+  color: #1984ea;
+  border: none;
+  box-shadow: 0 0px 1px 1px #00000073;
+
+  & .overlay {
+    position: absolute;
+    width: 0%;
+    height: 100%;
+    left: 0;
+    background: #1984ea;
+    z-index: -1;
+    transition: width 0.35s ease-in-out;
+  }
+
+  &:hover {
+    color: white;
+    & .overlay {
+      width: 100%;
+    }
+  }
+
+  // &:hover {
+  //   background: #1984ea;
+  //   color: white;
+  //   transition: all 0.3s ease;
+  // }
 }

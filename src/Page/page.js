@@ -3,59 +3,32 @@ import { Container } from "react-bootstrap";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLightbulb } from "@fortawesome/free-solid-svg-icons";
-// import { faGithub, faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
+import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 
 import { DARK, LIGHT } from "../Helper/constant";
-// import { Animaton } from "../Helper/helper";
-// import nightSky from "../Assets/Images/pexels-francesco-ungaro-998641.jpg";
-// import Moon from "../Assets/Images/moon.png";
-// import Sun from "../Assets/Images/Sun-1.png";
-import Sky from "../Assets/Images/oie_krvGLWj9P622.png";
+
+import { About, Work } from "./Section/about";
+import Circle from "../Assets/Images/layer1.svg";
 
 const HomePage = ({ themeSelect, theme }) => {
   return (
     <React.Fragment>
-      <div className="banner" style={{ overflow: "hidden" }}>
-        {/* <img
-          src={theme === LIGHT ? Sky : nightSky}
-          style={{
-            width: "100%",
-            height: "100vh",
-            position: "absolute",
-            zIndex: "0",
-          }}
-        ></img>
+      <div className="banner pt-5" style={{ overflow: "hidden" }}>
         <img
-          src={theme === LIGHT ? Sun : Moon}
-          style={{
-            width: "150px",
-            zIndex: "1",
-            position: "absolute",
-            right: "300px",
-            top: "20%",
-          }}
-        ></img> */}
-        <img
-          src={Sky}
-          alt="city"
-          style={{
-            width: "100%",
-            height: "100vh",
-            position: "absolute",
-            zIndex: "0",
-            bottom: "-175px",
-          }}
+          className="movingCircle"
+          src={Circle}
+          style={{ position: "absolute", width: "30%", right: "30px" }}
+          alt="clicleImage"
         ></img>
         <Container className="position-relative">
           <h3>Hello There</h3>
           <h1>
-            I am Vijay Tripathi<br></br>I am a Full Stack2 Developer
+            I am Vijay Tripathi<br></br>I am a Web Developer
           </h1>
           <div>
             <button
-              className="nv__link git-in-touch"
+              className="buttonAnimation"
               id="git-in-touch"
-              data-title={`Get in Touch`}
               style={{
                 display: "flex",
                 justifyContent: "center",
@@ -63,79 +36,19 @@ const HomePage = ({ themeSelect, theme }) => {
               }}
             >
               Get in Touch
+              <div className="overlay"></div>
             </button>
           </div>
         </Container>
       </div>
-      <section
-        className="aboutMe pt-5"
-        style={{ borderBottom: "1px solid #ebebeb" }}
-      >
-        <div className="title text-center pt-5">
-          <h3>About</h3>
-          <h2>Personal Info</h2>
-          <h4>Get to know more about me</h4>
-        </div>
-        <Container className="pt-5">
-          <div className="d-flex mt-5">
-            <div className="pr-5 w-100">
-              <h4 className="mb-5">Hello!</h4>
-              My name is Vijay Tripathi and I'm a passionate Web Developer using
-              web technologies to build amazing products and focusing on solving
-              problems for different niches and different industries using the
-              power of technology. <br></br>
-              <br></br>I will love to hear from you. Whether it's a project, job
-              opportunity, or just a chat. Feel free to contact me
-            </div>
-            <div className="w-100">
-              <h4 className="mb-5">Skills</h4>
-              <div
-                style={{
-                  display: "grid",
-                  gridTemplateColumns: "repeat(3, 1fr)",
-                }}
-              >
-                <div className="skill">Reactjs</div>
-                <div className="skill">Nodejs</div>
-                <div className="skill">SQL</div>
-                <div className="skill">MongoDB</div>
-                <div className="skill">SASS</div>
-                <div className="skill">PHP</div>
-              </div>
-            </div>
-          </div>
-        </Container>
-      </section>
-      <section className="works position-relative">
-        <div className="works__box py-5">
-          <div className="title text-center pt-5">
-            <h3>Works</h3>
-            <h2>Latest Projects</h2>
-            <h4>
-              Here you can find some of the projects that I created recently
-            </h4>
-          </div>
-          <div className="works__box">
-            <div className="position-relative">
-              <div className="works__cards left">
-                <div className="works__cards__content">
-                  <div className="works__cards__content__title">
-                    Video Calling
-                  </div>
-                  <div className="works__cards__content__des">
-                    All for video calling
-                  </div>
-                  <button>Click Me</button>
-                </div>
-                <div className="overlay"></div>
-              </div>
-            </div>
-            <div className="works__cards right">
-              <div className="overlay"></div>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* ABout ME Section */}
+      <About></About>
+      {/* About Me Ends Here */}
+
+      {/* Works Section */}
+      <Work></Work>
+
+      {/* { Theme selector Starts here} */}
 
       <div
         className="themeSelector"
@@ -144,6 +57,10 @@ const HomePage = ({ themeSelect, theme }) => {
         <FontAwesomeIcon
           icon={theme === LIGHT ? faLightbulb : faLightbulb}
         ></FontAwesomeIcon>
+      </div>
+      <div className="socialIcons">
+        <FontAwesomeIcon icon={faGithub}></FontAwesomeIcon>
+        <FontAwesomeIcon icon={faLinkedin}></FontAwesomeIcon>
       </div>
     </React.Fragment>
   );
