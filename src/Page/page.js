@@ -25,8 +25,8 @@ const HomePage = ({ themeSelect, theme }) => {
           <h1>
             I am Vijay Tripathi<br></br>I am a Web Developer
           </h1>
-          <div>
-            <button
+          <div class="pt-4">
+            {/* <button
               className="buttonAnimation"
               id="git-in-touch"
               style={{
@@ -37,7 +37,14 @@ const HomePage = ({ themeSelect, theme }) => {
             >
               Get in Touch
               <div className="overlay"></div>
-            </button>
+            </button> */}
+            <a href="/" class="cta">
+              <span>Click me</span>
+              <svg width="13px" height="10px" viewBox="0 0 13 10">
+                <path d="M1,5 L11,5"></path>
+                <polyline points="8 1 12 5 8 9"></polyline>
+              </svg>
+            </a>
           </div>
         </Container>
       </div>
