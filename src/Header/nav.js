@@ -17,7 +17,7 @@ const NavBar = () => {
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="mr-auto">
                 <Nav.Link
-                  href="#home"
+                  href="#aboutMe"
                   className="nv__link about"
                   onMouseEnter={() => {
                     Animaton("about");
@@ -26,7 +26,7 @@ const NavBar = () => {
                   data-title="About"
                 ></Nav.Link>
                 <Nav.Link
-                  href="#home"
+                  href="#works"
                   className="nv__link work"
                   onMouseEnter={() => {
                     Animaton("work");
@@ -35,7 +35,7 @@ const NavBar = () => {
                   data-title="Projects"
                 ></Nav.Link>
                 <Nav.Link
-                  href="#home"
+                  href="#footer"
                   className="nv__link contact"
                   onMouseEnter={() => {
                     Animaton("contact");
@@ -44,8 +44,10 @@ const NavBar = () => {
                   data-title="Contact Me"
                 ></Nav.Link>
                 <Nav.Link
-                  href="#home"
+                  href="https://drive.google.com/file/d/1u3EbFJXwpa5M3OhWLD652QzmGuzBPhMS/view?usp=sharing"
                   className="nv__link resume-mobile d-block d-md-none"
+                  target="_blank"
+                  rel="noopener"
                   onMouseEnter={() => {
                     Animaton("resume-mobile");
                   }}
@@ -63,9 +65,11 @@ const NavBar = () => {
                 </Nav.Link>
               </Nav>
             </Navbar.Collapse>
-            <div className="navbar-nav d-none d-md-inline">
+            <div className="navbar-nav d-none d-lg-inline">
               <Nav.Link
-                href="#home"
+                href="https://drive.google.com/file/d/1u3EbFJXwpa5M3OhWLD652QzmGuzBPhMS/view?usp=sharing"
+                target="_blank"
+                rel="noopener"
                 className="nv__link resume"
                 onMouseEnter={() => {
                   Animaton("resume");

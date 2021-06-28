@@ -114,6 +114,18 @@
     }
   }
 
+  & .navbar-toggler {
+    & .navbar-toggler-icon {
+      @include themed() {
+        background-image: t(icon-svg);
+      }
+    }
+    @include themed() {
+      color: t("color");
+      border-color: t("nav-border");
+    }
+  }
+
   @include themed() {
     color: t("color");
     background: t("bg");

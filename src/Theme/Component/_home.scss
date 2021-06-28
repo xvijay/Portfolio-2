@@ -138,6 +138,7 @@
       & .overlay {
         width: 100%;
         z-index: 2;
+        opacity: 0.8;
       }
 
       & .works__cards__content {
@@ -198,6 +199,20 @@
         line-height: 1.2;
         font-size: 1.5rem;
       }
+
+      @include MQ(md) {
+        width: auto;
+      }
+    }
+  }
+
+  & .cta {
+    margin: 0;
+    padding: 17px 22px;
+
+    @include themed("dark") {
+      color: t("color");
+      stroke: t("stroke");
     }
   }
 
@@ -309,47 +324,96 @@ a {
   margin: auto;
   padding: 19px 22px;
   transition: all 0.2s ease;
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    border-radius: 28px;
+    background: rgba(255, 171, 157, 0.5);
+    width: 56px;
+    height: 56px;
+    transition: all 0.3s ease;
+
+    &:hover {
+      width: 100%;
+      background: #ffab9d;
+    }
+  }
+
+  & span {
+    position: relative;
+    font-size: 16px;
+    line-height: 18px;
+    font-weight: 900;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    vertical-align: middle;
+  }
+
+  & svg {
+    position: relative;
+    top: 0;
+    margin-left: 10px;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 2;
+    transform: translateX(-5px);
+    transition: all 0.3s ease;
+  }
+
+  &:hover {
+    text-decoration: none;
+
+    & svg {
+      transform: translateX(0);
+    }
+  }
+  &:hover:before {
+    width: 100%;
+    // background: #ffab9d;
+    background: rgba(255, 171, 157, 0.5);
+  }
+
+  &:active {
+    transform: scale(0.96);
+  }
+
+  @include themed() {
+    color: t("color");
+    stroke: t("stroke");
+  }
 }
-.cta:before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: block;
-  border-radius: 28px;
-  background: rgba(255, 171, 157, 0.5);
-  width: 56px;
-  height: 56px;
-  transition: all 0.3s ease;
-}
-.cta span {
-  position: relative;
-  font-size: 16px;
-  line-height: 18px;
-  font-weight: 900;
-  letter-spacing: 0.25em;
-  text-transform: uppercase;
-  vertical-align: middle;
-}
-.cta svg {
-  position: relative;
-  top: 0;
-  margin-left: 10px;
-  fill: none;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke: #111;
-  stroke-width: 2;
-  transform: translateX(-5px);
-  transition: all 0.3s ease;
-}
-.cta:hover:before {
-  width: 100%;
-  background: #ffab9d;
-}
-.cta:hover svg {
-  transform: translateX(0);
-}
-.cta:active {
-  transform: scale(0.96);
+
+.footer {
+  height: auto;
+  font-family: $font-family !important;
+  font-weight: 500;
+
+  & h3 {
+    font-size: 1.8rem;
+    color: #a5a5a5;
+    text-transform: uppercase;
+    letter-spacing: 0.5rem;
+    position: relative;
+    font-family: $font-family !important;
+  }
+
+  & h2 {
+    font-size: 3rem;
+    letter-spacing: 0.5rem;
+    position: relative;
+    line-height: $line-height;
+    @include themed() {
+      color: t("color");
+    }
+  }
+
+  @include themed() {
+    color: t("color");
+    background: t("bg-about");
+  }
 }

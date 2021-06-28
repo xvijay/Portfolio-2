@@ -7,13 +7,13 @@ import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 
 import { DARK, LIGHT } from "../Helper/constant";
 
-import { About, Work } from "./Section/about";
+import { About, Work, Footer } from "./Section/about";
 import Circle from "../Assets/Images/layer1.svg";
 
 const HomePage = ({ themeSelect, theme }) => {
   return (
     <React.Fragment>
-      <div className="banner pt-5" style={{ overflow: "hidden" }}>
+      <div className="banner pt-5" style={{ overflow: "hidden" }} id="home">
         <img
           className="movingCircle"
           src={Circle}
@@ -25,21 +25,9 @@ const HomePage = ({ themeSelect, theme }) => {
           <h1>
             I am Vijay Tripathi<br></br>I am a Web Developer
           </h1>
-          <div class="pt-4">
-            {/* <button
-              className="buttonAnimation"
-              id="git-in-touch"
-              style={{
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-              }}
-            >
-              Get in Touch
-              <div className="overlay"></div>
-            </button> */}
-            <a href="/" class="cta">
-              <span>Click me</span>
+          <div className="pt-4">
+            <a href="#works" className="cta">
+              <span>Works</span>
               <svg width="13px" height="10px" viewBox="0 0 13 10">
                 <path d="M1,5 L11,5"></path>
                 <polyline points="8 1 12 5 8 9"></polyline>
@@ -55,6 +43,9 @@ const HomePage = ({ themeSelect, theme }) => {
       {/* Works Section */}
       <Work></Work>
 
+      {/* Footer Section */}
+      <Footer></Footer>
+
       {/* { Theme selector Starts here} */}
 
       <div
@@ -66,8 +57,20 @@ const HomePage = ({ themeSelect, theme }) => {
         ></FontAwesomeIcon>
       </div>
       <div className="socialIcons">
-        <FontAwesomeIcon icon={faGithub}></FontAwesomeIcon>
-        <FontAwesomeIcon icon={faLinkedin}></FontAwesomeIcon>
+        <a
+          href="https://github.com/xvijay"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <FontAwesomeIcon icon={faGithub}></FontAwesomeIcon>
+        </a>
+        <a
+          href="https://www.linkedin.com/in/vijay-tripathi-ab348a194/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <FontAwesomeIcon icon={faLinkedin}></FontAwesomeIcon>
+        </a>
       </div>
     </React.Fragment>
   );

@@ -1,5 +1,4 @@
 export const Animaton = (id) => {
-  console.log("here");
   const docStyle = document.querySelector(`#${id}`).style;
   const aElem = document.querySelector(`#${id}`);
   const boundingClientRect = aElem.getBoundingClientRect();

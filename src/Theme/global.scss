@@ -9,6 +9,10 @@
 
 @import "./Component/about";
 
+html {
+  scroll-behavior: smooth;
+}
+
 .themeSelector {
   position: fixed;
   top: 106px;
